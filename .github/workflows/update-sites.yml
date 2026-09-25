@@ -1,37 +1,60 @@
-# 「直达」数据管线 · 每月自动扩容
-# 每月 1 日 08:00 (UTC) 拉取 Wikidata P856 官网数据，刷新 data/sites-full.json
-# 并自动提交（如无变化则跳过）。部署在 Cloudflare Pages / GitHub Pages 后即生效。
+# 「直达」数据管线 · 每月自动扩容与健康校验
+# 每月 1 日 08:00 (UTC) 跑完整四步：导出精选 → 拉取 Wikidata → 健康校验 → 构建分片索引
+# 产出提交回仓库后，Cloudflare Pages 会自动重新部署，站点即完成"每月长大"。
+# 也可在 GitHub → Actions → 本工作流 → Run workflow 手动触发。
 name: update-sites
 
 on:
   schedule:
     - cron: "0 8 1 * *"
-  workflow_dispatch: {} # 允许手动触发
+  workflow_dispatch: {}
 
 permissions:
   contents: write
 
 jobs:
-  fetch:
+  pipeline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: 拉取 Wikidata 官网数据
-        run: python pipeline/fetch_wikidata.py 25000
+      - name: 安装管线依赖（pypinyin）
+        run: pip install -r pipeline/requirements.txt
+
+      # 1) 把页面内置的人工精选库导出为独立 JSON（始终是最高优先级来源）
+      - name: Stage 0 · 导出精选库
+        run: node tools/extract_curated.js index.html
+
+      # 2) 从 Wikidata 拉取官网白名单（分页拉取，约 10~25 分钟）
+      - name: Stage 1 · 拉取 Wikidata P856
+        run: python pipeline/fetch_wikidata.py --max 80000
+        continue-on-error: true
+
+      # 3) 链接健康校验（默认抽样核心区，控制耗时；全量用 --limit 0）
+      - name: Stage 2 · 链接健康校验
+        run: python pipeline/check_links.py --limit 4000 --workers 32
+        continue-on-error: true
+
+      # 4) 合并 → 拼音化 → 分级 → 分片索引
+      - name: Stage 3 · 构建分片索引
+        run: python pipeline/build_index.py --core-kb 700
 
       - name: 提交更新（无变化则跳过）
         run: |
           git config user.name "gotonav-bot"
           git config user.email "bot@zhida.cn"
-          git add gotonav/data/sites-full.json
+          git add data/
           if git diff --cached --quiet; then
             echo "数据无变化，跳过提交"
           else
-            git commit -m "chore: 每月更新 Wikidata 官网收录库"
+            git commit -m "chore: 每月自动更新官网收录（Wikidata + 健康校验 + 分片索引）"
             git push
           fi

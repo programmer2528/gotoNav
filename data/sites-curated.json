@@ -1,0 +1,1663 @@
+{
+  "updated": "2026-09-25",
+  "source": "index.html",
+  "count": 276,
+  "sites": [
+    {
+      "n": "Netflix",
+      "d": "https://www.netflix.com",
+      "c": "common",
+      "k": "netflix nfx naiwang 奈飞"
+    },
+    {
+      "n": "Notion",
+      "d": "https://www.notion.so",
+      "c": "common",
+      "k": "notion nuoshan biji 笔记"
+    },
+    {
+      "n": "YouTube",
+      "d": "https://www.youtube.com",
+      "c": "common",
+      "k": "youtube yt youtu 油管"
+    },
+    {
+      "n": "Google",
+      "d": "https://www.google.com",
+      "c": "common",
+      "k": "google guge guge搜索"
+    },
+    {
+      "n": "Bing 必应",
+      "d": "https://www.bing.com",
+      "c": "common",
+      "k": "bing biying"
+    },
+    {
+      "n": "开搜AI",
+      "d": "https://www.kaisouai.com",
+      "c": "common",
+      "k": "kaisouai kaisou 开搜 ksai"
+    },
+    {
+      "n": "Coursera",
+      "d": "https://www.coursera.org",
+      "c": "common",
+      "k": "coursera mooc kecheng 课程"
+    },
+    {
+      "n": "Udemy",
+      "d": "https://www.udemy.com",
+      "c": "common",
+      "k": "udemy youdemeni"
+    },
+    {
+      "n": "Duolingo 多邻国",
+      "d": "https://www.duolingo.com",
+      "c": "common",
+      "k": "duolingo duolinguo 多邻国"
+    },
+    {
+      "n": "TED",
+      "d": "https://www.ted.com",
+      "c": "common",
+      "k": "ted tedtalk 演讲"
+    },
+    {
+      "n": "Stanford Online",
+      "d": "https://online.stanford.edu",
+      "c": "common",
+      "k": "stanford sitanfu"
+    },
+    {
+      "n": "Udacity",
+      "d": "https://www.udacity.com",
+      "c": "common",
+      "k": "udacity youdacheng"
+    },
+    {
+      "n": "X（Twitter）",
+      "d": "https://x.com",
+      "c": "common",
+      "k": "twitter x tuite 推特"
+    },
+    {
+      "n": "Figma",
+      "d": "https://www.figma.com",
+      "c": "common",
+      "k": "figma"
+    },
+    {
+      "n": "12306 铁路购票",
+      "d": "https://www.12306.cn",
+      "c": "common",
+      "k": "12306 tl12306铁路 huoche"
+    },
+    {
+      "n": "国家电网",
+      "d": "https://www.sgcc.com.cn",
+      "c": "common",
+      "k": "sgcc gjdw dianwang 电网"
+    },
+    {
+      "n": "南方电网",
+      "d": "https://www.csg.cn",
+      "c": "common",
+      "k": "ndw csg nanfang dianwang"
+    },
+    {
+      "n": "中国石油",
+      "d": "https://www.cnpc.com.cn",
+      "c": "common",
+      "k": "zgsy cnpc shiyou"
+    },
+    {
+      "n": "中国石化",
+      "d": "https://www.sinopec.com",
+      "c": "common",
+      "k": "zgsh sinopec shihua"
+    },
+    {
+      "n": "中国天气网",
+      "d": "https://www.weather.com.cn",
+      "c": "common",
+      "k": "tianqi 天气 weather"
+    },
+    {
+      "n": "学信网",
+      "d": "https://www.chsi.com.cn",
+      "c": "common",
+      "k": "xuexin 学信 chsi"
+    },
+    {
+      "n": "中国教育考试网",
+      "d": "https://www.neea.edu.cn",
+      "c": "common",
+      "k": "neea jiaoyu kaoshi 考试"
+    },
+    {
+      "n": "国家政务服务平台",
+      "d": "https://gjzwfw.www.gov.cn",
+      "c": "common",
+      "k": "zhengwu zhengwu fuwu 政务"
+    },
+    {
+      "n": "国家社会保险公共服务平台",
+      "d": "https://si.12333.gov.cn",
+      "c": "common",
+      "k": "shebao 12333 社保"
+    },
+    {
+      "n": "快递100",
+      "d": "https://www.kuaidi100.com",
+      "c": "common",
+      "k": "kd100 kuaidi 快递"
+    },
+    {
+      "n": "顺丰速运",
+      "d": "https://www.sf-express.com",
+      "c": "common",
+      "k": "sf shunfeng 顺丰"
+    },
+    {
+      "n": "EMS 中国邮政",
+      "d": "https://www.ems.com.cn",
+      "c": "common",
+      "k": "ems youzheng 邮政"
+    },
+    {
+      "n": "高德地图",
+      "d": "https://www.amap.com",
+      "c": "common",
+      "k": "gaode amap ditu 地图"
+    },
+    {
+      "n": "百度地图",
+      "d": "https://map.baidu.com",
+      "c": "common",
+      "k": "baiduditu ditu 地图"
+    },
+    {
+      "n": "国家图书馆",
+      "d": "https://www.nlc.cn",
+      "c": "common",
+      "k": "gjtsg nlc tushuguan 图书馆"
+    },
+    {
+      "n": "故宫博物院",
+      "d": "https://www.dpm.org.cn",
+      "c": "common",
+      "k": "gugong dpm bowuguan 故宫"
+    },
+    {
+      "n": "中国移动",
+      "d": "https://www.chinamobile.com",
+      "c": "telecom",
+      "k": "yidong cmcc 10086 移动"
+    },
+    {
+      "n": "中国联通",
+      "d": "https://www.chinaunicom.cn",
+      "c": "telecom",
+      "k": "liantong 10010 联通 unicom"
+    },
+    {
+      "n": "中国电信",
+      "d": "https://www.chinatelecom.com.cn",
+      "c": "telecom",
+      "k": "dianxin 189 电信"
+    },
+    {
+      "n": "中国人民银行",
+      "d": "https://www.pbc.gov.cn",
+      "c": "bank",
+      "k": "yanghang 央行 pbc"
+    },
+    {
+      "n": "工商银行",
+      "d": "https://www.icbc.com.cn",
+      "c": "bank",
+      "k": "gsyh icbc gonghang"
+    },
+    {
+      "n": "建设银行",
+      "d": "https://www.ccb.com",
+      "c": "bank",
+      "k": "jsyh ccb jianhang"
+    },
+    {
+      "n": "农业银行",
+      "d": "https://www.abchina.com",
+      "c": "bank",
+      "k": "nyh abc nonghang"
+    },
+    {
+      "n": "中国银行",
+      "d": "https://www.boc.cn",
+      "c": "bank",
+      "k": "zgyh boc zhonghang"
+    },
+    {
+      "n": "交通银行",
+      "d": "https://www.bankcomm.com",
+      "c": "bank",
+      "k": "jtyh jiaohang"
+    },
+    {
+      "n": "招商银行",
+      "d": "https://www.cmbchina.com",
+      "c": "bank",
+      "k": "zsyh cmb zhaohang 招行"
+    },
+    {
+      "n": "邮储银行",
+      "d": "https://www.psbc.com",
+      "c": "bank",
+      "k": "ycyh psbc youchu"
+    },
+    {
+      "n": "中信银行",
+      "d": "https://www.citicbank.com",
+      "c": "bank",
+      "k": "zxyh citic zhongxin"
+    },
+    {
+      "n": "民生银行",
+      "d": "https://www.cmbc.com.cn",
+      "c": "bank",
+      "k": "msyh minsheng"
+    },
+    {
+      "n": "浦发银行",
+      "d": "https://www.spdb.com.cn",
+      "c": "bank",
+      "k": "pfyh pudong spdb"
+    },
+    {
+      "n": "兴业银行",
+      "d": "https://www.cib.com.cn",
+      "c": "bank",
+      "k": "xyh cib xingye"
+    },
+    {
+      "n": "光大银行",
+      "d": "https://www.cebbank.com",
+      "c": "bank",
+      "k": "gdyh guangda ebb"
+    },
+    {
+      "n": "平安银行",
+      "d": "https://bank.pingan.com",
+      "c": "bank",
+      "k": "payh pingan"
+    },
+    {
+      "n": "华夏银行",
+      "d": "https://www.hxb.com.cn",
+      "c": "bank",
+      "k": "hxyh huaxia"
+    },
+    {
+      "n": "广发银行",
+      "d": "https://www.cgbchina.com.cn",
+      "c": "bank",
+      "k": "gfyh cgb guangfa"
+    },
+    {
+      "n": "浙商银行",
+      "d": "https://www.czbank.com",
+      "c": "bank",
+      "k": "zsyh2 zheshang czbank"
+    },
+    {
+      "n": "渤海银行",
+      "d": "https://www.cbhb.com.cn",
+      "c": "bank",
+      "k": "bhyh bohai cbhb"
+    },
+    {
+      "n": "恒丰银行",
+      "d": "https://www.hfbank.com.cn",
+      "c": "bank",
+      "k": "hfyh hengfeng hfbank"
+    },
+    {
+      "n": "上海银行",
+      "d": "https://www.bosc.cn",
+      "c": "bank",
+      "k": "shyh shanghai bosc"
+    },
+    {
+      "n": "南京银行",
+      "d": "https://www.njcb.com.cn",
+      "c": "bank",
+      "k": "njyh nanjing njcb"
+    },
+    {
+      "n": "宁波银行",
+      "d": "https://www.nbcb.cn",
+      "c": "bank",
+      "k": "nbyh ningbo nbcb"
+    },
+    {
+      "n": "杭州银行",
+      "d": "https://www.hzbank.com.cn",
+      "c": "bank",
+      "k": "hzyh hangzhou hzbank"
+    },
+    {
+      "n": "江苏银行",
+      "d": "https://www.jsbchina.cn",
+      "c": "bank",
+      "k": "jsyh jiangsu jsb"
+    },
+    {
+      "n": "徽商银行",
+      "d": "https://www.hsbank.com.cn",
+      "c": "bank",
+      "k": "hsyh huishang hsbank"
+    },
+    {
+      "n": "天津银行",
+      "d": "https://www.bankoftianjin.com",
+      "c": "bank",
+      "k": "tjyh tianjin"
+    },
+    {
+      "n": "北京银行",
+      "d": "https://www.bankofbeijing.com.cn",
+      "c": "bank",
+      "k": "bjyh bob"
+    },
+    {
+      "n": "网商银行",
+      "d": "https://www.mybank.cn",
+      "c": "bank",
+      "k": "wsyh wangshang mybank"
+    },
+    {
+      "n": "微众银行",
+      "d": "https://www.webank.com",
+      "c": "bank",
+      "k": "wzyh weizhong webank"
+    },
+    {
+      "n": "中信证券",
+      "d": "https://www.cs.ecitic.com",
+      "c": "fund",
+      "k": "zxzq citic"
+    },
+    {
+      "n": "招商证券",
+      "d": "https://www.newone.com.cn",
+      "c": "fund",
+      "k": "zszq newone"
+    },
+    {
+      "n": "华泰证券",
+      "d": "https://www.htsc.com.cn",
+      "c": "fund",
+      "k": "htzq htsc"
+    },
+    {
+      "n": "国泰君安",
+      "d": "https://www.gtja.com",
+      "c": "fund",
+      "k": "gtja guotai"
+    },
+    {
+      "n": "海通证券",
+      "d": "https://www.htsec.com",
+      "c": "fund",
+      "k": "htsec haitong"
+    },
+    {
+      "n": "广发证券",
+      "d": "https://www.gf.com.cn",
+      "c": "fund",
+      "k": "gfzq gf"
+    },
+    {
+      "n": "中金公司",
+      "d": "https://www.cicc.com",
+      "c": "fund",
+      "k": "cicc zhongjin"
+    },
+    {
+      "n": "东方证券",
+      "d": "https://www.dfzq.com.cn",
+      "c": "fund",
+      "k": "dfzq dongfang"
+    },
+    {
+      "n": "中国银河证券",
+      "d": "https://www.chinastock.com.cn",
+      "c": "fund",
+      "k": "yhzq yinhe chinastock"
+    },
+    {
+      "n": "中信建投",
+      "d": "https://www.csc108.com",
+      "c": "fund",
+      "k": "zxjt jiantou csc"
+    },
+    {
+      "n": "国信证券",
+      "d": "https://www.guosen.com.cn",
+      "c": "fund",
+      "k": "gxzq guosen"
+    },
+    {
+      "n": "申万宏源",
+      "d": "https://www.swhysc.com",
+      "c": "fund",
+      "k": "swhy shenwan swhy"
+    },
+    {
+      "n": "兴业证券",
+      "d": "https://www.xyzq.com.cn",
+      "c": "fund",
+      "k": "xyzq xingye zhengquan"
+    },
+    {
+      "n": "天天基金网",
+      "d": "https://fund.eastmoney.com",
+      "c": "fund",
+      "k": "ttjj tiantian eastmoney"
+    },
+    {
+      "n": "易方达基金",
+      "d": "https://www.efunds.com.cn",
+      "c": "fund",
+      "k": "yfd efunds"
+    },
+    {
+      "n": "华夏基金",
+      "d": "https://www.chinaamc.com",
+      "c": "fund",
+      "k": "hxjj chinaamc"
+    },
+    {
+      "n": "嘉实基金",
+      "d": "https://www.jsfund.cn",
+      "c": "fund",
+      "k": "jsjj jiashi jsfund"
+    },
+    {
+      "n": "广发基金",
+      "d": "https://www.gffunds.com",
+      "c": "fund",
+      "k": "gfjj guangfa jijin"
+    },
+    {
+      "n": "富国基金",
+      "d": "https://www.fullgoal.com.cn",
+      "c": "fund",
+      "k": "fgjj fuguo fullgoal"
+    },
+    {
+      "n": "南方基金",
+      "d": "https://www.nffund.com",
+      "c": "fund",
+      "k": "nfjj nanfang jijin"
+    },
+    {
+      "n": "中国平安",
+      "d": "https://www.pingan.com",
+      "c": "ins",
+      "k": "pingan pa"
+    },
+    {
+      "n": "中国人寿",
+      "d": "https://www.chinalife.com.cn",
+      "c": "ins",
+      "k": "zgrs chinalife"
+    },
+    {
+      "n": "中国人保",
+      "d": "https://www.picc.com",
+      "c": "ins",
+      "k": "picc renbao 人保"
+    },
+    {
+      "n": "太平洋保险",
+      "d": "https://www.cpic.com.cn",
+      "c": "ins",
+      "k": "cpic taibao 太保"
+    },
+    {
+      "n": "泰康保险",
+      "d": "https://www.taikang.com",
+      "c": "ins",
+      "k": "taikang tkbx"
+    },
+    {
+      "n": "新华保险",
+      "d": "https://www.newchinalife.com",
+      "c": "ins",
+      "k": "xhbx xinhuaxian newchinalife"
+    },
+    {
+      "n": "中国太平",
+      "d": "https://www.cntaiping.com",
+      "c": "ins",
+      "k": "taiping cntaiping"
+    },
+    {
+      "n": "阳光保险",
+      "d": "https://www.sinosig.com",
+      "c": "ins",
+      "k": "yangguang sinosig"
+    },
+    {
+      "n": "中国政府网",
+      "d": "https://www.gov.cn",
+      "c": "gov",
+      "k": "zwg guowuyuan 国务院"
+    },
+    {
+      "n": "外交部",
+      "d": "https://www.mfa.gov.cn",
+      "c": "gov",
+      "k": "waijiao mfa"
+    },
+    {
+      "n": "财政部",
+      "d": "https://www.mof.gov.cn",
+      "c": "gov",
+      "k": "caizheng mof"
+    },
+    {
+      "n": "司法部",
+      "d": "https://www.moj.gov.cn",
+      "c": "gov",
+      "k": "sifa moj"
+    },
+    {
+      "n": "教育部",
+      "d": "https://www.moe.gov.cn",
+      "c": "gov",
+      "k": "jiaoyu moe jyb"
+    },
+    {
+      "n": "公安部",
+      "d": "https://www.mps.gov.cn",
+      "c": "gov",
+      "k": "gongan mps"
+    },
+    {
+      "n": "民政部",
+      "d": "https://www.mca.gov.cn",
+      "c": "gov",
+      "k": "minzheng mca"
+    },
+    {
+      "n": "人力资源和社会保障部",
+      "d": "https://www.mohrss.gov.cn",
+      "c": "gov",
+      "k": "renshe mohrss 社保"
+    },
+    {
+      "n": "住房和城乡建设部",
+      "d": "https://www.mohurd.gov.cn",
+      "c": "gov",
+      "k": "zhufang mohurd 住建"
+    },
+    {
+      "n": "交通运输部",
+      "d": "https://www.mot.gov.cn",
+      "c": "gov",
+      "k": "jiaotong mot"
+    },
+    {
+      "n": "农业农村部",
+      "d": "https://www.moa.gov.cn",
+      "c": "gov",
+      "k": "nongye moa"
+    },
+    {
+      "n": "工业和信息化部",
+      "d": "https://www.miit.gov.cn",
+      "c": "gov",
+      "k": "gongxin miit 工信"
+    },
+    {
+      "n": "商务部",
+      "d": "https://www.mofcom.gov.cn",
+      "c": "gov",
+      "k": "shangwu mofcom"
+    },
+    {
+      "n": "文化和旅游部",
+      "d": "https://www.mct.gov.cn",
+      "c": "gov",
+      "k": "wenlv mct 文旅"
+    },
+    {
+      "n": "国家卫生健康委员会",
+      "d": "https://www.nhc.gov.cn",
+      "c": "gov",
+      "k": "weijian nhc 卫健委"
+    },
+    {
+      "n": "生态环境部",
+      "d": "https://www.mee.gov.cn",
+      "c": "gov",
+      "k": "huanbao mee 环保"
+    },
+    {
+      "n": "自然资源部",
+      "d": "https://www.mnr.gov.cn",
+      "c": "gov",
+      "k": "ziran mnr"
+    },
+    {
+      "n": "水利部",
+      "d": "https://www.mwr.gov.cn",
+      "c": "gov",
+      "k": "shuili mwr"
+    },
+    {
+      "n": "应急管理部",
+      "d": "https://www.mem.gov.cn",
+      "c": "gov",
+      "k": "yingji mem 应急"
+    },
+    {
+      "n": "国家税务总局",
+      "d": "https://www.chinatax.gov.cn",
+      "c": "gov",
+      "k": "shuiwu swj tax 税务"
+    },
+    {
+      "n": "国家市场监督管理总局",
+      "d": "https://www.samr.gov.cn",
+      "c": "gov",
+      "k": "samr shichang 市监"
+    },
+    {
+      "n": "国家医疗保障局",
+      "d": "https://www.nhsa.gov.cn",
+      "c": "gov",
+      "k": "yibao nhsa 医保"
+    },
+    {
+      "n": "国家互联网信息办公室",
+      "d": "https://www.cac.gov.cn",
+      "c": "gov",
+      "k": "wangxin cac 网信办"
+    },
+    {
+      "n": "海关总署",
+      "d": "https://www.customs.gov.cn",
+      "c": "gov",
+      "k": "haiguan customs 海关"
+    },
+    {
+      "n": "国家统计局",
+      "d": "https://www.stats.gov.cn",
+      "c": "gov",
+      "k": "tongjiju stats 统计"
+    },
+    {
+      "n": "中国民用航空局",
+      "d": "https://www.caac.gov.cn",
+      "c": "gov",
+      "k": "minhang caac 民航"
+    },
+    {
+      "n": "中国证券监督管理委员会",
+      "d": "https://www.csrc.gov.cn",
+      "c": "gov",
+      "k": "zhengjianhui csrc 证监会"
+    },
+    {
+      "n": "国家外汇管理局",
+      "d": "https://www.safe.gov.cn",
+      "c": "gov",
+      "k": "waihui safe 外汇"
+    },
+    {
+      "n": "国家邮政局",
+      "d": "https://www.spb.gov.cn",
+      "c": "gov",
+      "k": "youzhengju spb"
+    },
+    {
+      "n": "国家知识产权局",
+      "d": "https://www.cnipa.gov.cn",
+      "c": "gov",
+      "k": "zhishi chanquan cnipa 专利"
+    },
+    {
+      "n": "中国气象局",
+      "d": "https://www.cma.gov.cn",
+      "c": "gov",
+      "k": "qixiang cma 气象"
+    },
+    {
+      "n": "国家药品监督管理局",
+      "d": "https://www.nmpa.gov.cn",
+      "c": "gov",
+      "k": "yaopin nmpa 药监"
+    },
+    {
+      "n": "全国人民代表大会",
+      "d": "https://www.npc.gov.cn",
+      "c": "gov",
+      "k": "renda npc 人大"
+    },
+    {
+      "n": "最高人民法院",
+      "d": "https://www.court.gov.cn",
+      "c": "gov",
+      "k": "fayuan court 法院"
+    },
+    {
+      "n": "最高人民检察院",
+      "d": "https://www.spp.gov.cn",
+      "c": "gov",
+      "k": "jiancha spp 检察院"
+    },
+    {
+      "n": "清华大学",
+      "d": "https://www.tsinghua.edu.cn",
+      "c": "edu",
+      "k": "qhdx qinghua tsinghua thu"
+    },
+    {
+      "n": "北京大学",
+      "d": "https://www.pku.edu.cn",
+      "c": "edu",
+      "k": "bjdx beida pku"
+    },
+    {
+      "n": "浙江大学",
+      "d": "https://www.zju.edu.cn",
+      "c": "edu",
+      "k": "zjdx zheda zju"
+    },
+    {
+      "n": "复旦大学",
+      "d": "https://www.fudan.edu.cn",
+      "c": "edu",
+      "k": "fddx fudan"
+    },
+    {
+      "n": "上海交通大学",
+      "d": "https://www.sjtu.edu.cn",
+      "c": "edu",
+      "k": "sjtu jiaotong shangjiao"
+    },
+    {
+      "n": "南京大学",
+      "d": "https://www.nju.edu.cn",
+      "c": "edu",
+      "k": "njdx nanda nju"
+    },
+    {
+      "n": "中国科学技术大学",
+      "d": "https://www.ustc.edu.cn",
+      "c": "edu",
+      "k": "zkeda ustc keda"
+    },
+    {
+      "n": "武汉大学",
+      "d": "https://www.whu.edu.cn",
+      "c": "edu",
+      "k": "whdx wuda whu"
+    },
+    {
+      "n": "华中科技大学",
+      "d": "https://www.hust.edu.cn",
+      "c": "edu",
+      "k": "hzkd hust"
+    },
+    {
+      "n": "中山大学",
+      "d": "https://www.sysu.edu.cn",
+      "c": "edu",
+      "k": "zsdx sysu"
+    },
+    {
+      "n": "哈尔滨工业大学",
+      "d": "https://www.hit.edu.cn",
+      "c": "edu",
+      "k": "hagd hit hagongda"
+    },
+    {
+      "n": "西安交通大学",
+      "d": "https://www.xjtu.edu.cn",
+      "c": "edu",
+      "k": "xajtd xitong"
+    },
+    {
+      "n": "中国人民大学",
+      "d": "https://www.ruc.edu.cn",
+      "c": "edu",
+      "k": "renda ruc 人大"
+    },
+    {
+      "n": "北京师范大学",
+      "d": "https://www.bnu.edu.cn",
+      "c": "edu",
+      "k": "bjsfd bnu shifan"
+    },
+    {
+      "n": "同济大学",
+      "d": "https://www.tongji.edu.cn",
+      "c": "edu",
+      "k": "tongji tjdx"
+    },
+    {
+      "n": "南开大学",
+      "d": "https://www.nankai.edu.cn",
+      "c": "edu",
+      "k": "nkdx nankai"
+    },
+    {
+      "n": "天津大学",
+      "d": "https://www.tju.edu.cn",
+      "c": "edu",
+      "k": "tjdx tianjindaxue tju"
+    },
+    {
+      "n": "东南大学",
+      "d": "https://www.seu.edu.cn",
+      "c": "edu",
+      "k": "dndx dongnan seu"
+    },
+    {
+      "n": "厦门大学",
+      "d": "https://www.xmu.edu.cn",
+      "c": "edu",
+      "k": "xmdx xiada xmu"
+    },
+    {
+      "n": "山东大学",
+      "d": "https://www.sdu.edu.cn",
+      "c": "edu",
+      "k": "sddx shanda sdu"
+    },
+    {
+      "n": "四川大学",
+      "d": "https://www.scu.edu.cn",
+      "c": "edu",
+      "k": "scdx chuanda scu"
+    },
+    {
+      "n": "电子科技大学",
+      "d": "https://www.uestc.edu.cn",
+      "c": "edu",
+      "k": "dianzi uestc chengdian"
+    },
+    {
+      "n": "重庆大学",
+      "d": "https://www.cqu.edu.cn",
+      "c": "edu",
+      "k": "cqdx chongqing cqu"
+    },
+    {
+      "n": "兰州大学",
+      "d": "https://www.lzu.edu.cn",
+      "c": "edu",
+      "k": "lzdx lanzhou lzu"
+    },
+    {
+      "n": "西北工业大学",
+      "d": "https://www.nwpu.edu.cn",
+      "c": "edu",
+      "k": "xbgd xigongda nwpu"
+    },
+    {
+      "n": "大连理工大学",
+      "d": "https://www.dlut.edu.cn",
+      "c": "edu",
+      "k": "dlut dalian ligong"
+    },
+    {
+      "n": "华南理工大学",
+      "d": "https://www.scut.edu.cn",
+      "c": "edu",
+      "k": "huanan ligong scut"
+    },
+    {
+      "n": "吉林大学",
+      "d": "https://www.jlu.edu.cn",
+      "c": "edu",
+      "k": "jldx jilin jlu"
+    },
+    {
+      "n": "东北大学",
+      "d": "https://www.neu.edu.cn",
+      "c": "edu",
+      "k": "dbdx dongbei neu"
+    },
+    {
+      "n": "湖南大学",
+      "d": "https://www.hnu.edu.cn",
+      "c": "edu",
+      "k": "hndx hunan hnu"
+    },
+    {
+      "n": "中南大学",
+      "d": "https://www.csu.edu.cn",
+      "c": "edu",
+      "k": "zndx zhongnan csu"
+    },
+    {
+      "n": "华东师范大学",
+      "d": "https://www.ecnu.edu.cn",
+      "c": "edu",
+      "k": "hdsd ecnu huadong shifan"
+    },
+    {
+      "n": "中国农业大学",
+      "d": "https://www.cau.edu.cn",
+      "c": "edu",
+      "k": "nongye dagau cau"
+    },
+    {
+      "n": "中央财经大学",
+      "d": "https://www.cufe.edu.cn",
+      "c": "edu",
+      "k": "caizheng cufe 中央财大"
+    },
+    {
+      "n": "对外经济贸易大学",
+      "d": "https://www.uibe.edu.cn",
+      "c": "edu",
+      "k": "duimao uibe 贸大"
+    },
+    {
+      "n": "中国政法大学",
+      "d": "https://www.cupl.edu.cn",
+      "c": "edu",
+      "k": "fada zhengfa cupl"
+    },
+    {
+      "n": "北京外国语大学",
+      "d": "https://www.bfsu.edu.cn",
+      "c": "edu",
+      "k": "beiwait bfsu 北外"
+    },
+    {
+      "n": "上海外国语大学",
+      "d": "https://www.shisu.edu.cn",
+      "c": "edu",
+      "k": "shangwait shisu 上外"
+    },
+    {
+      "n": "西安电子科技大学",
+      "d": "https://www.xidian.edu.cn",
+      "c": "edu",
+      "k": "xidian xdzd"
+    },
+    {
+      "n": "北京航空航天大学",
+      "d": "https://www.buaa.edu.cn",
+      "c": "edu",
+      "k": "hangkong buaa 北航"
+    },
+    {
+      "n": "北京理工大学",
+      "d": "https://www.bit.edu.cn",
+      "c": "edu",
+      "k": "ligong bit 北理工"
+    },
+    {
+      "n": "郑州大学",
+      "d": "https://www.zzu.edu.cn",
+      "c": "edu",
+      "k": "zzdx zhengzhou zzu"
+    },
+    {
+      "n": "云南大学",
+      "d": "https://www.ynu.edu.cn",
+      "c": "edu",
+      "k": "yndx yunnan ynu"
+    },
+    {
+      "n": "广西大学",
+      "d": "https://www.gxu.edu.cn",
+      "c": "edu",
+      "k": "gxdx guangxi gxu"
+    },
+    {
+      "n": "贵州大学",
+      "d": "https://www.gzu.edu.cn",
+      "c": "edu",
+      "k": "gzdx guizhou gzu"
+    },
+    {
+      "n": "海南大学",
+      "d": "https://www.hainanu.edu.cn",
+      "c": "edu",
+      "k": "hndx hainan hainanu"
+    },
+    {
+      "n": "内蒙古大学",
+      "d": "https://www.imu.edu.cn",
+      "c": "edu",
+      "k": "nmgdx neimenggu imu"
+    },
+    {
+      "n": "ChatGPT",
+      "d": "https://chatgpt.com",
+      "c": "ai",
+      "k": "chatgpt gpt cahtgpt openai"
+    },
+    {
+      "n": "OpenAI",
+      "d": "https://openai.com",
+      "c": "ai",
+      "k": "openai opnai"
+    },
+    {
+      "n": "Claude",
+      "d": "https://claude.ai",
+      "c": "ai",
+      "k": "claude anthropic"
+    },
+    {
+      "n": "Gemini",
+      "d": "https://gemini.google.com",
+      "c": "ai",
+      "k": "gemini bard 谷歌"
+    },
+    {
+      "n": "Perplexity",
+      "d": "https://www.perplexity.ai",
+      "c": "ai",
+      "k": "perplexity pplx"
+    },
+    {
+      "n": "Microsoft Copilot",
+      "d": "https://copilot.microsoft.com",
+      "c": "ai",
+      "k": "copilot 微软副驾驶"
+    },
+    {
+      "n": "Hugging Face",
+      "d": "https://huggingface.co",
+      "c": "ai",
+      "k": "huggingface hf"
+    },
+    {
+      "n": "Midjourney",
+      "d": "https://www.midjourney.com",
+      "c": "ai",
+      "k": "midjourney mj"
+    },
+    {
+      "n": "Stability AI",
+      "d": "https://stability.ai",
+      "c": "ai",
+      "k": "stability stable diffusion"
+    },
+    {
+      "n": "Suno",
+      "d": "https://suno.com",
+      "c": "ai",
+      "k": "suno 音乐生成"
+    },
+    {
+      "n": "Runway",
+      "d": "https://runwayml.com",
+      "c": "ai",
+      "k": "runway"
+    },
+    {
+      "n": "ElevenLabs",
+      "d": "https://elevenlabs.io",
+      "c": "ai",
+      "k": "elevenlabs 语音"
+    },
+    {
+      "n": "DeepSeek",
+      "d": "https://www.deepseek.com",
+      "c": "ai",
+      "k": "deepseek ds 深度求索"
+    },
+    {
+      "n": "Kimi",
+      "d": "https://kimi.moonshot.cn",
+      "c": "ai",
+      "k": "kimi moonshot 月之暗面"
+    },
+    {
+      "n": "豆包",
+      "d": "https://www.doubao.com",
+      "c": "ai",
+      "k": "doubao db 字节"
+    },
+    {
+      "n": "文心一言",
+      "d": "https://yiyan.baidu.com",
+      "c": "ai",
+      "k": "wenxin yiyan wx 百度"
+    },
+    {
+      "n": "通义千问",
+      "d": "https://tongyi.aliyun.com",
+      "c": "ai",
+      "k": "tongyi qwen qianwen 阿里"
+    },
+    {
+      "n": "智谱清言",
+      "d": "https://chatglm.cn",
+      "c": "ai",
+      "k": "chatglm zhipu qingyan"
+    },
+    {
+      "n": "讯飞星火",
+      "d": "https://xinghuo.xfyun.cn",
+      "c": "ai",
+      "k": "xinghuo xunfei spark"
+    },
+    {
+      "n": "腾讯混元",
+      "d": "https://hunyuan.tencent.com",
+      "c": "ai",
+      "k": "hunyuan txhy"
+    },
+    {
+      "n": "秘塔 AI 搜索",
+      "d": "https://metaso.cn",
+      "c": "ai",
+      "k": "metaso mita"
+    },
+    {
+      "n": "GitHub",
+      "d": "https://github.com",
+      "c": "dev",
+      "k": "github gh git"
+    },
+    {
+      "n": "GitLab",
+      "d": "https://about.gitlab.com",
+      "c": "dev",
+      "k": "gitlab"
+    },
+    {
+      "n": "Stack Overflow",
+      "d": "https://stackoverflow.com",
+      "c": "dev",
+      "k": "stackoverflow sf sifou"
+    },
+    {
+      "n": "掘金",
+      "d": "https://juejin.cn",
+      "c": "dev",
+      "k": "juejin jj 稀土"
+    },
+    {
+      "n": "CSDN",
+      "d": "https://www.csdn.net",
+      "c": "dev",
+      "k": "csdn"
+    },
+    {
+      "n": "SegmentFault",
+      "d": "https://segmentfault.com",
+      "c": "dev",
+      "k": "segmentfault sf sfgg"
+    },
+    {
+      "n": "博客园",
+      "d": "https://www.cnblogs.com",
+      "c": "dev",
+      "k": "bokeyuan cnblogs"
+    },
+    {
+      "n": "Spring 官方",
+      "d": "https://spring.io",
+      "c": "dev",
+      "k": "spring springboot 框架"
+    },
+    {
+      "n": "Maven 仓库",
+      "d": "https://mvnrepository.com",
+      "c": "dev",
+      "k": "maven mvnrepository 依赖"
+    },
+    {
+      "n": "Baeldung",
+      "d": "https://www.baeldung.com",
+      "c": "dev",
+      "k": "baeldung java教程"
+    },
+    {
+      "n": "MDN Web Docs",
+      "d": "https://developer.mozilla.org",
+      "c": "dev",
+      "k": "mdn mozilla web文档"
+    },
+    {
+      "n": "npm",
+      "d": "https://www.npmjs.com",
+      "c": "dev",
+      "k": "npm node 包管理"
+    },
+    {
+      "n": "Docker Hub",
+      "d": "https://hub.docker.com",
+      "c": "dev",
+      "k": "docker hub 容器"
+    },
+    {
+      "n": "JetBrains",
+      "d": "https://www.jetbrains.com",
+      "c": "dev",
+      "k": "jetbrains idea"
+    },
+    {
+      "n": "Oracle Java",
+      "d": "https://www.oracle.com/java",
+      "c": "dev",
+      "k": "oracle java jdk"
+    },
+    {
+      "n": "菜鸟教程",
+      "d": "https://www.runoob.com",
+      "c": "dev",
+      "k": "runoob cainiao"
+    },
+    {
+      "n": "LeetCode",
+      "d": "https://leetcode.cn",
+      "c": "dev",
+      "k": "leetcode likou 力扣 算法"
+    },
+    {
+      "n": "牛客网",
+      "d": "https://www.nowcoder.com",
+      "c": "dev",
+      "k": "nowcoder niuke 刷题"
+    },
+    {
+      "n": "InfoQ",
+      "d": "https://www.infoq.cn",
+      "c": "dev",
+      "k": "infoq"
+    },
+    {
+      "n": "Apache 软件基金会",
+      "d": "https://www.apache.org",
+      "c": "dev",
+      "k": "apache"
+    },
+    {
+      "n": "腾讯",
+      "d": "https://www.tencent.com",
+      "c": "tech",
+      "k": "tencent tx qq"
+    },
+    {
+      "n": "阿里巴巴",
+      "d": "https://www.alibaba.com",
+      "c": "tech",
+      "k": "alibaba ali"
+    },
+    {
+      "n": "字节跳动",
+      "d": "https://www.bytedance.com",
+      "c": "tech",
+      "k": "zjtd bytedance douyin"
+    },
+    {
+      "n": "百度",
+      "d": "https://www.baidu.com",
+      "c": "tech",
+      "k": "baidu bd"
+    },
+    {
+      "n": "网易",
+      "d": "https://www.163.com",
+      "c": "tech",
+      "k": "wangyi 163 netease"
+    },
+    {
+      "n": "华为",
+      "d": "https://www.huawei.com",
+      "c": "tech",
+      "k": "huawei hw"
+    },
+    {
+      "n": "小米",
+      "d": "https://www.mi.com",
+      "c": "tech",
+      "k": "mi xiaomi xm"
+    },
+    {
+      "n": "OPPO",
+      "d": "https://www.oppo.com",
+      "c": "tech",
+      "k": "oppo"
+    },
+    {
+      "n": "vivo",
+      "d": "https://www.vivo.com",
+      "c": "tech",
+      "k": "vivo"
+    },
+    {
+      "n": "荣耀",
+      "d": "https://www.honor.com",
+      "c": "tech",
+      "k": "rongyao honor"
+    },
+    {
+      "n": "大疆",
+      "d": "https://www.dji.com",
+      "c": "tech",
+      "k": "dji dj drone 无人机"
+    },
+    {
+      "n": "中兴通讯",
+      "d": "https://www.zte.com.cn",
+      "c": "tech",
+      "k": "zhongxing zte"
+    },
+    {
+      "n": "联想",
+      "d": "https://www.lenovo.com.cn",
+      "c": "tech",
+      "k": "lianxiang lenovo"
+    },
+    {
+      "n": "海尔",
+      "d": "https://www.haier.com",
+      "c": "tech",
+      "k": "haier"
+    },
+    {
+      "n": "美的",
+      "d": "https://www.midea.com",
+      "c": "tech",
+      "k": "meidi midea"
+    },
+    {
+      "n": "格力",
+      "d": "https://www.gree.com",
+      "c": "tech",
+      "k": "gel gree geli"
+    },
+    {
+      "n": "海信",
+      "d": "https://www.hisense.com",
+      "c": "tech",
+      "k": "haixin hisense"
+    },
+    {
+      "n": "TCL",
+      "d": "https://www.tcl.com",
+      "c": "tech",
+      "k": "tcl"
+    },
+    {
+      "n": "京东方",
+      "d": "https://www.boe.com",
+      "c": "tech",
+      "k": "boe jdf jingdongfang"
+    },
+    {
+      "n": "比亚迪",
+      "d": "https://www.byd.com",
+      "c": "tech",
+      "k": "biyadi byd"
+    },
+    {
+      "n": "蔚来",
+      "d": "https://www.nio.com",
+      "c": "tech",
+      "k": "weilai nio"
+    },
+    {
+      "n": "理想汽车",
+      "d": "https://www.lixiang.com",
+      "c": "tech",
+      "k": "lixiang lizj ideal"
+    },
+    {
+      "n": "小鹏汽车",
+      "d": "https://www.xiaopeng.com",
+      "c": "tech",
+      "k": "xiaopeng xpeng"
+    },
+    {
+      "n": "快手",
+      "d": "https://www.kuaishou.com",
+      "c": "tech",
+      "k": "kuaishou ks"
+    },
+    {
+      "n": "抖音",
+      "d": "https://www.douyin.com",
+      "c": "tech",
+      "k": "douyin dy"
+    },
+    {
+      "n": "微博",
+      "d": "https://www.weibo.com",
+      "c": "tech",
+      "k": "weibo xinlang sina"
+    },
+    {
+      "n": "知乎",
+      "d": "https://www.zhihu.com",
+      "c": "tech",
+      "k": "zhihu zh"
+    },
+    {
+      "n": "哔哩哔哩",
+      "d": "https://www.bilibili.com",
+      "c": "tech",
+      "k": "bili bilibili bzhan B站"
+    },
+    {
+      "n": "小红书",
+      "d": "https://www.xiaohongshu.com",
+      "c": "tech",
+      "k": "xhs xiaohongshu"
+    },
+    {
+      "n": "美团",
+      "d": "https://www.meituan.com",
+      "c": "tech",
+      "k": "meituan mt waimai"
+    },
+    {
+      "n": "滴滴出行",
+      "d": "https://www.didiglobal.com",
+      "c": "travel",
+      "k": "didi chuxing 滴滴"
+    },
+    {
+      "n": "科大讯飞",
+      "d": "https://www.iflytek.com",
+      "c": "tech",
+      "k": "xunfei iflytek kdxf"
+    },
+    {
+      "n": "宁德时代",
+      "d": "https://www.catl.com",
+      "c": "tech",
+      "k": "catl ndsd"
+    },
+    {
+      "n": "奇虎360",
+      "d": "https://www.360.cn",
+      "c": "tech",
+      "k": "qihoo 360"
+    },
+    {
+      "n": "金山办公",
+      "d": "https://www.wps.cn",
+      "c": "tech",
+      "k": "jinshan wps"
+    },
+    {
+      "n": "淘宝网",
+      "d": "https://www.taobao.com",
+      "c": "shop",
+      "k": "taobao tb"
+    },
+    {
+      "n": "天猫",
+      "d": "https://www.tmall.com",
+      "c": "shop",
+      "k": "tmall tm"
+    },
+    {
+      "n": "京东",
+      "d": "https://www.jd.com",
+      "c": "shop",
+      "k": "jd jingdong"
+    },
+    {
+      "n": "拼多多",
+      "d": "https://www.pinduoduo.com",
+      "c": "shop",
+      "k": "pdd pinduoduo"
+    },
+    {
+      "n": "1688",
+      "d": "https://www.1688.com",
+      "c": "shop",
+      "k": "alibaba pifa 1688"
+    },
+    {
+      "n": "苏宁易购",
+      "d": "https://www.suning.com",
+      "c": "shop",
+      "k": "suning sn"
+    },
+    {
+      "n": "唯品会",
+      "d": "https://www.vip.com",
+      "c": "shop",
+      "k": "weipinhui vip"
+    },
+    {
+      "n": "闲鱼",
+      "d": "https://www.goofish.com",
+      "c": "shop",
+      "k": "xianyu goofish"
+    },
+    {
+      "n": "转转",
+      "d": "https://www.zhuanzhuan.com",
+      "c": "shop",
+      "k": "zhuanzhuan zz"
+    },
+    {
+      "n": "网易严选",
+      "d": "https://you.163.com",
+      "c": "shop",
+      "k": "yanxuan you163"
+    },
+    {
+      "n": "得物",
+      "d": "https://www.dewu.com",
+      "c": "shop",
+      "k": "dewu dupin"
+    },
+    {
+      "n": "盒马",
+      "d": "https://www.freshippo.com",
+      "c": "shop",
+      "k": "hema freshippo"
+    },
+    {
+      "n": "中国国际航空",
+      "d": "https://www.airchina.com.cn",
+      "c": "travel",
+      "k": "guohang airchina ca"
+    },
+    {
+      "n": "中国东方航空",
+      "d": "https://www.ceair.com",
+      "c": "travel",
+      "k": "donghang ceair mu"
+    },
+    {
+      "n": "中国南方航空",
+      "d": "https://www.csair.com",
+      "c": "travel",
+      "k": "nanhang csair cz"
+    },
+    {
+      "n": "厦门航空",
+      "d": "https://www.xiamenair.com",
+      "c": "travel",
+      "k": "xiamenhang xiamenair mf"
+    },
+    {
+      "n": "深圳航空",
+      "d": "https://www.shenzhenair.com",
+      "c": "travel",
+      "k": "shenzhenhang shenzhenair zh"
+    },
+    {
+      "n": "春秋航空",
+      "d": "https://www.ch.com",
+      "c": "travel",
+      "k": "chunqiu ch"
+    },
+    {
+      "n": "海南航空",
+      "d": "https://www.hnair.com",
+      "c": "travel",
+      "k": "haihang hnair"
+    },
+    {
+      "n": "吉祥航空",
+      "d": "https://www.juneyaoair.com",
+      "c": "travel",
+      "k": "jixiang juneyaoair ho"
+    },
+    {
+      "n": "携程",
+      "d": "https://www.ctrip.com",
+      "c": "travel",
+      "k": "xiecheng ctrip"
+    },
+    {
+      "n": "去哪儿旅行",
+      "d": "https://www.qunar.com",
+      "c": "travel",
+      "k": "qunar qunaer"
+    },
+    {
+      "n": "飞猪",
+      "d": "https://www.fliggy.com",
+      "c": "travel",
+      "k": "feizhu fliggy"
+    },
+    {
+      "n": "同程旅行",
+      "d": "https://www.ly.com",
+      "c": "travel",
+      "k": "tongcheng ly"
+    },
+    {
+      "n": "航旅纵横",
+      "d": "https://www.umetrip.com",
+      "c": "travel",
+      "k": "hanglv umetrip"
+    },
+    {
+      "n": "华住集团",
+      "d": "https://www.huazhu.com",
+      "c": "travel",
+      "k": "huazhu quanji 酒店"
+    },
+    {
+      "n": "亚朵酒店",
+      "d": "https://www.yaduo.com",
+      "c": "travel",
+      "k": "yaduo atour 酒店"
+    }
+  ]
+}

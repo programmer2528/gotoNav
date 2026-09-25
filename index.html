@@ -6,11 +6,13 @@
 <title>直达 GoToNav — 输入品牌名，直达官网</title>
 <meta name="description" content="输入品牌 / 拼音，一键抵达官方站。无广告，无竞价排名，域名逐条核验。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M9 16h12M16 10.5L21.5 16L16 21.5' stroke='%23FFFFFF' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- 版本3：Noto Sans SC SemiBold 600（本地四字子集，与思源同源）（与基准版仅字体不同） -->
+<link rel="stylesheet" href="fonts/noto-sans-sc.css">
 <style>
 :root{
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
   /* 标题专用：中文宋体系，收细字重 + 放宽字距，比黑体更耐看 */
-  --art:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",Georgia,serif;
+  --art:"Noto Sans SC","Source Han Sans SC VF","Microsoft YaHei","PingFang SC",sans-serif;
   --ease:cubic-bezier(.22,.68,.26,1);
   --text:#16181D;
   --dim:#6B7280;
@@ -63,25 +65,32 @@ mark{background:transparent;color:var(--blue)}
 .btn-outline:hover{background:var(--blue-soft);border-color:var(--blue)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;z-index:1;display:flex;flex-direction:column;
+.hero{position:relative;z-index:5;display:flex;flex-direction:column;
   align-items:center;text-align:center;padding:clamp(56px,9vh,96px) 24px 76px}
+/* hero 局部：仅标题区域两处克制的淡蓝色斑，不动整页背景 */
+.hero::before{content:"";position:absolute;left:0;right:0;top:-30px;bottom:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(ellipse 44% 50% at 15% 32%,rgba(147,197,253,.20),transparent 64%),
+    radial-gradient(ellipse 40% 46% at 85% 20%,rgba(191,219,254,.17),transparent 62%)}
 .eyebrow{font-size:12px;letter-spacing:.34em;color:var(--faint);text-transform:uppercase;margin-bottom:26px}
-.hero h1{font-family:var(--art);font-size:clamp(52px,10.5vw,116px);font-weight:600;line-height:1.06;
+.hero h1{font-family:var(--art);font-size:clamp(56px,11vw,124px);font-weight:600;line-height:1.06;
   letter-spacing:.08em;text-indent:.08em;color:#0B0D11}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--dim);margin:20px auto 42px;max-width:32em}
 
 .search-wrap{position:relative;width:100%;max-width:740px;z-index:30}
-.search{display:flex;align-items:center;gap:10px;padding:4px 4px 4px 22px;border-radius:999px;
+.search{display:flex;align-items:center;gap:10px;padding:5px 5px 5px 22px;border-radius:999px;
   background:rgba(255,255,255,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border:1px solid rgba(255,255,255,.9);
-  box-shadow:0 14px 40px rgba(30,60,120,.12);
-  transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
-.search.focus{transform:translateY(-2px);box-shadow:0 22px 52px rgba(30,60,120,.20)}
+  border:1px solid rgba(147,197,253,.55);
+  box-shadow:0 14px 40px rgba(30,60,120,.10);
+  transition:box-shadow .3s var(--ease),transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
+.search:hover{background:rgba(219,234,254,.60)}
+.search.focus{transform:translateY(-2px);border-color:rgba(96,165,250,.75);
+  box-shadow:0 22px 52px rgba(30,60,120,.18),0 0 0 3px rgba(147,197,253,.18)}
 .search-ico{color:var(--faint);display:flex;flex-shrink:0}
-.search input{flex:1;border:none;outline:none;background:transparent;font-size:15px;color:var(--text);min-width:0}
+.search input{flex:1;border:none;outline:none;background:transparent;font-size:16px;color:var(--text);min-width:0}
 .search input::placeholder{color:#A8B3C4}
-.search-btn{height:38px;padding:0 24px;border-radius:999px;flex-shrink:0;color:#fff;
-  font-size:14px;font-weight:600;display:flex;align-items:center;gap:7px;
+.search-btn{height:40px;padding:0 16px;border-radius:999px;flex-shrink:0;color:#fff;
+  font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:5px;
   background:linear-gradient(135deg,#2554C7 0%,#3B82F6 52%,#6AA9FF 100%);
   box-shadow:0 6px 18px rgba(43,110,246,.34),inset 0 1px 0 rgba(255,255,255,.28);
   transition:transform .25s var(--ease),box-shadow .25s}
@@ -136,6 +145,11 @@ mark{background:transparent;color:var(--blue)}
 .panel.show{opacity:1;transform:none;pointer-events:auto}
 .sug{display:flex;align-items:center;gap:12px;padding:11px 16px;cursor:pointer;transition:background .15s}
 .sug.active,.sug:hover{background:var(--blue-soft)}
+/* 文本列：显式容器 + 零 min-width，保证名称与其下一行网址左边缘严格对齐 */
+.sug .avatar{flex-shrink:0}
+.sug-txt{flex:1;min-width:0;text-align:left}
+.sug-name,.sug-domain{margin:0;padding:0;text-align:left;line-height:1.45;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sug-name{font-size:14px;font-weight:500}
 .sug-domain{font-size:11.5px;color:var(--faint)}
 .sug-meta{margin-left:auto;text-align:right;flex-shrink:0}
@@ -213,7 +227,7 @@ footer{position:relative;z-index:1;padding:40px 24px 44px;text-align:center}
 @media (max-width:560px){
   .collage{height:92px}
   .search{padding-left:18px}
-  .search-btn{padding:0 18px;height:36px}
+  .search-btn{padding:0 18px;height:40px}
   .hero-sub{margin-bottom:34px}
 }
 </style>
@@ -242,8 +256,8 @@ footer{position:relative;z-index:1;padding:40px 24px 44px;text-align:center}
     <div class="search" id="searchBox">
       <span class="search-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
       <input id="q" type="text" placeholder="输入品牌、拼音或关键词…" autocomplete="off" spellcheck="false">
-      <button class="search-btn" id="goBtn">直达
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h13M12 6.5L17.5 12L12 17.5"/></svg>
+      <button class="search-btn" id="goBtn" aria-label="直达">直达
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
       </button>
     </div>
     <div class="panel" id="panel" role="listbox"></div>
@@ -318,6 +332,20 @@ const CATS=[
 ];
 const SITES=[
 /* —— 常用工具 —— */
+["Netflix","https://www.netflix.com","common","netflix nfx naiwang 奈飞"],
+["Notion","https://www.notion.so","common","notion nuoshan biji 笔记"],
+["YouTube","https://www.youtube.com","common","youtube yt youtu 油管"],
+["Google","https://www.google.com","common","google guge guge搜索"],
+["Bing 必应","https://www.bing.com","common","bing biying"],
+["开搜AI","https://www.kaisouai.com","common","kaisouai kaisou 开搜 ksai"],
+["Coursera","https://www.coursera.org","common","coursera mooc kecheng 课程"],
+["Udemy","https://www.udemy.com","common","udemy youdemeni"],
+["Duolingo 多邻国","https://www.duolingo.com","common","duolingo duolinguo 多邻国"],
+["TED","https://www.ted.com","common","ted tedtalk 演讲"],
+["Stanford Online","https://online.stanford.edu","common","stanford sitanfu"],
+["Udacity","https://www.udacity.com","common","udacity youdacheng"],
+["X（Twitter）","https://x.com","common","twitter x tuite 推特"],
+["Figma","https://www.figma.com","common","figma"],
 ["12306 铁路购票","https://www.12306.cn","common","12306 tl12306铁路 huoche"],
 ["国家电网","https://www.sgcc.com.cn","common","sgcc gjdw dianwang 电网"],
 ["南方电网","https://www.csg.cn","common","ndw csg nanfang dianwang"],
@@ -335,12 +363,6 @@ const SITES=[
 ["百度地图","https://map.baidu.com","common","baiduditu ditu 地图"],
 ["国家图书馆","https://www.nlc.cn","common","gjtsg nlc tushuguan 图书馆"],
 ["故宫博物院","https://www.dpm.org.cn","common","gugong dpm bowuguan 故宫"],
-["Netflix","https://www.netflix.com","common","netflix nfx naiwang 奈飞"],
-["Notion","https://www.notion.so","common","notion nuoshan biji 笔记"],
-["YouTube","https://www.youtube.com","common","youtube yt youtu 油管"],
-["Google","https://www.google.com","common","google guge guge搜索"],
-["X（Twitter）","https://x.com","common","twitter x tuite 推特"],
-["Figma","https://www.figma.com","common","figma"],
 /* —— 运营商 —— */
 ["中国移动","https://www.chinamobile.com","telecom","yidong cmcc 10086 移动"],
 ["中国联通","https://www.chinaunicom.cn","telecom","liantong 10010 联通 unicom"],
@@ -528,7 +550,7 @@ const SITES=[
 ["JetBrains","https://www.jetbrains.com","dev","jetbrains idea"],
 ["Oracle Java","https://www.oracle.com/java","dev","oracle java jdk"],
 ["菜鸟教程","https://www.runoob.com","dev","runoob cainiao"],
-["LeetCode","https://leetcode.cn","dev","leetcode likou 力扣 算法"],
+["LeetCode","https://leetcode.cn","dev","leetcode likou lc 力扣 算法"],
 ["牛客网","https://www.nowcoder.com","dev","nowcoder niuke 刷题"],
 ["InfoQ","https://www.infoq.cn","dev","infoq"],
 ["Apache 软件基金会","https://www.apache.org","dev","apache"],
@@ -658,14 +680,15 @@ function go(site){
 
 /* ================= 下拉候选区（输入即弹，多结果可点选） ================= */
 const q=$("#q"),panel=$("#panel"),searchBox=$("#searchBox");
-const rowHTML=(s,i,qv)=>`
- <div class="sug ${i===0?"active":""}" data-i="${i}" role="option">
-   <div class="avatar" data-c="${i%5}">${s.n[0]}</div>
-   <div><div class="sug-name">${qv?hi(s.n,qv):s.n}</div>
-   <div class="sug-domain">${s.d.replace(/^https?:\/\//,"")}</div></div>
-   <div class="sug-meta"><div class="sug-cat">${CATMAP[s.c]?CATMAP[s.c].label:""}</div>
-   <div class="sug-go">直达 ↗</div></div>
- </div>`;
+const rowHTML=(s,i,qv)=>`<div class="sug ${i===0?"active":""}" data-i="${i}" role="option">`+
+ `<div class="avatar" data-c="${i%5}">${s.n[0]}</div>`+
+ `<div class="sug-txt">`+
+   `<div class="sug-name">${qv?hi(s.n,qv):s.n}</div>`+
+   `<div class="sug-domain">${s.d.replace(/^https?:\/\//,"")}</div>`+
+ `</div>`+
+ `<div class="sug-meta"><div class="sug-cat">${CATMAP[s.c]?CATMAP[s.c].label:""}</div>`+
+ `<div class="sug-go">直达 ↗</div></div>`+
+`</div>`;
 function showPanel(){
   const qv=norm(q.value);
   if(!qv){hidePanel();return} // 空查询交给动态推荐组件
@@ -777,19 +800,9 @@ function renderCats(){
 }
 renderCats();
 
-/* 加载扩展收录库（Wikidata P856，pipeline 生成；file:// 打开时自动降级为内置库） */
-fetch("data/sites-full.json").then(r=>r.ok?r.json():null).then(ext=>{
-  if(!ext||!ext.sites)return;
-  const seen=new Set(idx.map(s=>s.d));
-  let added=0;
-  for(const e of ext.sites){
-    if(seen.has(e.d))continue;
-    seen.add(e.d);
-    idx.push({n:e.n,d:e.d,c:"more",keys:norm(e.n).split(/\s+/).filter(Boolean)});
-    added++;
-  }
-  if(added){renderCats();console.log(`已加载扩展收录 ${added} 条（Wikidata P856）`)}
-}).catch(()=>{});
+/* 扩展收录库由 extended-search.js 负责：
+   读 data/manifest.json → 空闲时后台加载核心区分片 → 内置库没命中时才渐进加载长尾。
+   file:// 直开或尚无数据时静默降级，仅用内置精选库，不报错。 */
 
 /* 滚动渐入 */
 const io=new IntersectionObserver(es=>{
@@ -825,5 +838,6 @@ $("#subBtn").addEventListener("click",()=>{
   toast("已提交，进入审核队列（当前为本地演示，正式版接入审核后台）");
 });
 </script>
+<script src="extended-search.js" defer></script>
 </body>
 </html>
