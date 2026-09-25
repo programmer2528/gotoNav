@@ -28,19 +28,22 @@
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:var(--sans);color:var(--text);line-height:1.6;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  background:linear-gradient(180deg,#DCEBFF 0%,#E8F2FF 9%,#F5F9FE 30%,#FFFFFF 52%,#FDFCF8 78%,#EDFAF3 100%) fixed}
+  background:#FFFFFF fixed}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 ::selection{background:rgba(37,99,235,.15)}
 mark{background:transparent;color:var(--blue)}
 
-/* 背景光斑 + 胶片颗粒（Miu Miu 质感） */
+/* 背景多色融合渐变：蘸取五张卡片的颜色（冰蓝/暖橙/薄荷/淡紫/柔黄），
+   以大而柔的光斑相互渗透，无边界无断层，白底为主基调 */
 .aurora{position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    linear-gradient(180deg,rgba(147,197,253,.55) 0%,rgba(191,219,254,.30) 8%,rgba(255,255,255,0) 22%),
-    radial-gradient(ellipse 62% 30% at 14% -4%,rgba(96,165,250,.32),transparent 62%),
-    radial-gradient(ellipse 56% 28% at 86% 1%,rgba(147,197,253,.28),transparent 60%),
-    radial-gradient(ellipse 52% 34% at 50% 114%,rgba(52,211,153,.18),transparent 66%)}
+    radial-gradient(ellipse 52% 44% at 6% -8%,rgba(168,204,255,.55),transparent 62%),
+    radial-gradient(ellipse 46% 40% at 94% -6%,rgba(255,201,143,.44),transparent 60%),
+    radial-gradient(ellipse 44% 36% at 62% -12%,rgba(168,228,196,.42),transparent 58%),
+    radial-gradient(ellipse 46% 38% at 108% 52%,rgba(205,176,255,.30),transparent 62%),
+    radial-gradient(ellipse 42% 34% at -6% 58%,rgba(255,225,126,.28),transparent 60%),
+    radial-gradient(ellipse 52% 36% at 50% 116%,rgba(168,228,196,.30),transparent 64%)}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:98;opacity:.05;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.55'/></svg>");
   mix-blend-mode:overlay}
@@ -66,19 +69,22 @@ mark{background:transparent;color:var(--blue)}
 .hero{position:relative;z-index:1;display:flex;flex-direction:column;
   align-items:center;text-align:center;padding:clamp(56px,9vh,96px) 24px 76px}
 .eyebrow{font-size:12px;letter-spacing:.34em;color:var(--faint);text-transform:uppercase;margin-bottom:26px}
-.hero h1{font-family:var(--art);font-size:clamp(52px,10.5vw,116px);font-weight:400;line-height:1.06;
-  letter-spacing:.08em;text-indent:.08em;
-  background:linear-gradient(96deg,#131C2E 0%,#1E3568 42%,#2E5AA4 68%,#131C2E 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1{font-family:var(--art);font-size:clamp(52px,10.5vw,116px);font-weight:600;line-height:1.06;
+  letter-spacing:.07em;text-indent:.07em;
+  /* 镜面质感：深→亮→微光带→深，中段亮带模拟镜面反光 */
+  background:linear-gradient(97deg,#182742 0%,#23447F 26%,#4B7BD8 44%,#A9C6F2 50%,#3E6CC0 58%,#1B2C50 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  /* 镜面阴影：贴身一层冷蓝柔影 + 远处一层大扩散，让字浮起来 */
+  filter:drop-shadow(0 4px 9px rgba(43,84,166,.30)) drop-shadow(0 16px 30px rgba(43,84,166,.16))}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--dim);margin:20px auto 42px;max-width:32em}
 
 /* 搜索：细长胶囊 + 悬停/聚焦时与按钮同色的一圈毛玻璃 */
 .search-wrap{position:relative;width:100%;max-width:740px;z-index:30}
-.search-wrap::before{content:"";position:absolute;inset:-8px;border-radius:999px;z-index:-1;
-  background:linear-gradient(135deg,rgba(37,84,199,.26),rgba(59,130,246,.20) 52%,rgba(106,169,255,.26));
-  backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
-  border:1px solid rgba(255,255,255,.55);
-  opacity:0;transform:scale(.985);
+.search-wrap::before{content:"";position:absolute;inset:-4px;border-radius:999px;z-index:-1;
+  background:linear-gradient(135deg,#2554C7 0%,#3B82F6 52%,#6AA9FF 100%);
+  backdrop-filter:blur(14px) saturate(170%);-webkit-backdrop-filter:blur(14px) saturate(170%);
+  border:1px solid rgba(255,255,255,.65);
+  opacity:0;transform:scale(.99);
   transition:opacity .32s var(--ease),transform .32s var(--ease)}
 .search-wrap:hover::before,.search-wrap:focus-within::before{opacity:1;transform:none}
 .search{display:flex;align-items:center;gap:10px;padding:7px 7px 7px 24px;border-radius:999px;
@@ -719,11 +725,11 @@ document.addEventListener("keydown",e=>{
 
 /* 品牌卡片拼贴：五张常用直达（配色沿用旧版，每 3 秒循环换位） */
 const COLLAGE=[
-  {d:"https://chatgpt.com",bg:"linear-gradient(140deg,#FFE7CF,#FFD3A8)"},
-  {d:"https://github.com",bg:"linear-gradient(140deg,#DCEBFF,#B9D5FF)"},
-  {d:"https://www.bilibili.com",bg:"linear-gradient(140deg,#E4F8EE,#BFE9D4)"},
-  {d:"https://www.netflix.com",bg:"linear-gradient(140deg,#F1E7FF,#D9C6FF)"},
-  {d:"https://leetcode.cn",bg:"linear-gradient(140deg,#FFF6CE,#FFE9A0)"}
+  {d:"https://chatgpt.com",bg:"linear-gradient(140deg,#FFE0BC,#FFC98F)"},
+  {d:"https://github.com",bg:"linear-gradient(140deg,#CFE4FF,#A8CCFF)"},
+  {d:"https://www.bilibili.com",bg:"linear-gradient(140deg,#D4F5E4,#A8E4C4)"},
+  {d:"https://www.netflix.com",bg:"linear-gradient(140deg,#E9DBFF,#CDB0FF)"},
+  {d:"https://leetcode.cn",bg:"linear-gradient(140deg,#FFF2B8,#FFE17E)"}
 ];
 const deck=$("#collage");
 deck.innerHTML=COLLAGE.map(it=>{
