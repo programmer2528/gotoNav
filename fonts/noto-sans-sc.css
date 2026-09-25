@@ -1,0 +1,4 @@
+/* Noto Sans SC SemiBold 600 — 仅含「直达官网」四字的本地子集，离线可用 */
+@font-face{font-family:"Noto Sans SC";font-style:normal;font-weight:600;font-display:swap;
+  src:url("./noto-sans-sc-600-4chars.woff2") format("woff2");
+  unicode-range:U+5b98,U+76f4,U+7f51,U+8fbe}

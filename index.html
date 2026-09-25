@@ -9,8 +9,8 @@
 <style>
 :root{
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
-  /* 标题专用：中文宋体系，优先粗宋（华文中宋/思源宋体），Windows 下 SimSun 走合成加粗 */
-  --art:"Source Han Serif SC","Noto Serif SC","STZhongsong","Songti SC","STSong","SimSun",Georgia,serif;
+  /* 标题专用：中文宋体系，收细字重 + 放宽字距，比黑体更耐看 */
+  --art:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",Georgia,serif;
   --ease:cubic-bezier(.22,.68,.26,1);
   --text:#16181D;
   --dim:#6B7280;
@@ -28,23 +28,19 @@
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:var(--sans);color:var(--text);line-height:1.6;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  /* 白色透蓝：基底是不那么白的蓝白，纵向极轻微过渡 */
-  background:linear-gradient(180deg,#F3F8FF 0%,#EFF5FF 50%,#F1F8FF 100%) fixed}
+  background:linear-gradient(180deg,#DCEBFF 0%,#E8F2FF 9%,#F5F9FE 30%,#FFFFFF 52%,#FDFCF8 78%,#EDFAF3 100%) fixed}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 ::selection{background:rgba(37,99,235,.15)}
 mark{background:transparent;color:var(--blue)}
 
-/* 浅蓝色斑：数量更多、体量更大，蓝色克制地加深一档，整体呈「白色透蓝」 */
+/* 背景光斑 + 胶片颗粒（Miu Miu 质感） */
 .aurora{position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(ellipse 72% 50% at 2% -10%,rgba(122,168,240,.42),transparent 66%),
-    radial-gradient(ellipse 64% 44% at 97% -8%,rgba(147,197,253,.38),transparent 64%),
-    radial-gradient(ellipse 66% 46% at 44% -4%,rgba(163,205,255,.32),transparent 62%),
-    radial-gradient(ellipse 60% 42% at -10% 40%,rgba(122,168,240,.28),transparent 64%),
-    radial-gradient(ellipse 62% 44% at 108% 46%,rgba(147,197,253,.26),transparent 62%),
-    radial-gradient(ellipse 60% 40% at 76% 68%,rgba(163,205,255,.22),transparent 62%),
-    radial-gradient(ellipse 74% 48% at 50% 112%,rgba(122,168,240,.32),transparent 66%)}
+    linear-gradient(180deg,rgba(147,197,253,.55) 0%,rgba(191,219,254,.30) 8%,rgba(255,255,255,0) 22%),
+    radial-gradient(ellipse 62% 30% at 14% -4%,rgba(96,165,250,.32),transparent 62%),
+    radial-gradient(ellipse 56% 28% at 86% 1%,rgba(147,197,253,.28),transparent 60%),
+    radial-gradient(ellipse 52% 34% at 50% 114%,rgba(52,211,153,.18),transparent 66%)}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:98;opacity:.05;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.55'/></svg>");
   mix-blend-mode:overlay}
@@ -52,7 +48,7 @@ mark{background:transparent;color:var(--blue)}
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
   padding:0 max(32px,5vw);height:62px;
-  background:rgba(255,255,255,.26);backdrop-filter:blur(20px) saturate(170%);
+  background:rgba(255,255,255,.45);backdrop-filter:blur(20px) saturate(170%);
   -webkit-backdrop-filter:blur(20px) saturate(170%)}
 .brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;letter-spacing:-.01em}
 .brand-mark{width:26px;height:26px;border-radius:8px;
@@ -70,11 +66,11 @@ mark{background:transparent;color:var(--blue)}
 .hero{position:relative;z-index:1;display:flex;flex-direction:column;
   align-items:center;text-align:center;padding:clamp(56px,9vh,96px) 24px 76px}
 .eyebrow{font-size:12px;letter-spacing:.34em;color:var(--faint);text-transform:uppercase;margin-bottom:26px}
-.hero h1{font-family:var(--art);font-size:clamp(56px,11.5vw,124px);font-weight:600;line-height:1.06;
-  letter-spacing:.05em;text-indent:.05em;color:#0B0D11}
+.hero h1{font-family:var(--art);font-size:clamp(52px,10.5vw,116px);font-weight:600;line-height:1.06;
+  letter-spacing:.08em;text-indent:.08em;color:#0B0D11}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--dim);margin:20px auto 42px;max-width:32em}
 
-.search-wrap{position:relative;width:100%;max-width:620px;z-index:30}
+.search-wrap{position:relative;width:100%;max-width:740px;z-index:30}
 .search{display:flex;align-items:center;gap:10px;padding:4px 4px 4px 22px;border-radius:999px;
   background:rgba(255,255,255,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border:1px solid rgba(255,255,255,.9);
