@@ -28,15 +28,21 @@
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:var(--sans);color:var(--text);line-height:1.6;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  /* 整页统一铺导航条色调（调浅一档），仅允许极轻微的纵向明度变化，无断层 */
-  background:linear-gradient(180deg,#D9E7FA 0%,#DEEBFB 40%,#E3EFFB 100%) fixed}
+  /* 白底为主，纵向仅极轻微明度过渡 */
+  background:linear-gradient(180deg,#FFFFFF 0%,#FCFDFF 45%,#F7FBFF 100%) fixed}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 ::selection{background:rgba(37,99,235,.15)}
 mark{background:transparent;color:var(--blue)}
 
-/* 胶片颗粒（Miu Miu 质感）；光斑层已移除以保证整页色调统一 */
-.aurora{position:fixed;inset:0;pointer-events:none;z-index:0}
+/* 浅蓝色斑：四角+底部低透明度柔光，与白底自然融合，不形成色带 */
+.aurora{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 48% 34% at 8% -6%,rgba(147,197,253,.34),transparent 62%),
+    radial-gradient(ellipse 44% 30% at 92% -4%,rgba(191,219,254,.30),transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 4%,rgba(191,219,254,.22),transparent 58%),
+    radial-gradient(ellipse 44% 30% at -4% 62%,rgba(147,197,253,.20),transparent 62%),
+    radial-gradient(ellipse 48% 32% at 50% 112%,rgba(191,219,254,.26),transparent 64%)}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:98;opacity:.05;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.55'/></svg>");
   mix-blend-mode:overlay}
@@ -62,11 +68,11 @@ mark{background:transparent;color:var(--blue)}
 .hero{position:relative;z-index:1;display:flex;flex-direction:column;
   align-items:center;text-align:center;padding:clamp(56px,9vh,96px) 24px 76px}
 .eyebrow{font-size:12px;letter-spacing:.34em;color:var(--faint);text-transform:uppercase;margin-bottom:26px}
-.hero h1{font-family:var(--art);font-size:clamp(56px,11.5vw,124px);font-weight:700;line-height:1.06;
+.hero h1{font-family:var(--art);font-size:clamp(56px,11.5vw,124px);font-weight:600;line-height:1.06;
   letter-spacing:.05em;text-indent:.05em;color:#0B0D11}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--dim);margin:20px auto 42px;max-width:32em}
 
-.search-wrap{position:relative;width:100%;max-width:740px;z-index:30}
+.search-wrap{position:relative;width:100%;max-width:620px;z-index:30}
 .search{display:flex;align-items:center;gap:10px;padding:4px 4px 4px 22px;border-radius:999px;
   background:rgba(255,255,255,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border:1px solid rgba(255,255,255,.9);
