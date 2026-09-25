@@ -4,7 +4,10 @@
 const fs = require("fs");
 const path = require("path");
 
-const file = path.join(__dirname, "..", "index.html");
+/* 用法：node tools/verify.js [文件路径]，默认校验 ../index.html */
+const file = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : path.join(__dirname, "..", "index.html");
 const html = fs.readFileSync(file, "utf8");
 
 const css = (html.match(/<style>([\s\S]*?)<\/style>/) || [])[1] || "";
