@@ -1,0 +1,37 @@
+# 「直达」数据管线 · 每月自动扩容
+# 每月 1 日 08:00 (UTC) 拉取 Wikidata P856 官网数据，刷新 data/sites-full.json
+# 并自动提交（如无变化则跳过）。部署在 Cloudflare Pages / GitHub Pages 后即生效。
+name: update-sites
+
+on:
+  schedule:
+    - cron: "0 8 1 * *"
+  workflow_dispatch: {} # 允许手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 拉取 Wikidata 官网数据
+        run: python pipeline/fetch_wikidata.py 25000
+
+      - name: 提交更新（无变化则跳过）
+        run: |
+          git config user.name "gotonav-bot"
+          git config user.email "bot@zhida.cn"
+          git add gotonav/data/sites-full.json
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore: 每月更新 Wikidata 官网收录库"
+            git push
+          fi
