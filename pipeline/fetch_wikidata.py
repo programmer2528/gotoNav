@@ -22,7 +22,7 @@
     python pipeline/fetch_wikidata.py                      # 默认目标 60000 条
     python pipeline/fetch_wikidata.py --max 30000          # 指定上限
     python pipeline/fetch_wikidata.py --min-links 5        # 提高热度门槛（更干净）
-    python pipeline/fetch_wikidata.py --max Visible 0      # 不限行数（跑到拉空为止）
+    python pipeline/fetch_wikidata.py --max 0            # 不限行数（跑到拉空为止）
 """
 import json
 import re

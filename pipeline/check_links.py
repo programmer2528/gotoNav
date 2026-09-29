@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-「直达」数据管线 · Stage 3：链接健康校验（每月例行）
+「直达」数据管线 · Stage 2：链接健康校验（每月例行）
 ====================================================
 为什么要这一步
     数万条自动数据里一定会混入：已关停站点、换了域名、被墙、证书失效的链接。
@@ -15,9 +15,13 @@
 产出
     data/health.json  {"updated":..., "results": {"cmbchina.com":{"t":"ok","s":200,"u":"https://..."}}}
 
+校验范围
+    人工精选库（data/sites-curated.json）**始终全量校验**——它是 A 级置顶数据，
+    失效链接伤害最大，不能漏。Wikidata 数据存在时在其后追加（--limit 只限制这部分）。
+
 用法
     python pipeline/check_links.py                 # 全量（数万条约 20-40 分钟）
-    python pipeline/check_links.py --limit 3000    # 先抽查核心区（约 3 分钟）
+    python pipeline/check_links.py --limit 3000    # 精选库全量 + Wikidata 前 3000 条（约 3 分钟）
     python pipeline/check_links.py --workers 64    # 提高并发（带宽允许时）
 """
 import json
@@ -93,18 +97,39 @@ def probe(item):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, default=0, help="只校验前 N 条（0 = 全量）")
+    ap.add_argument("--limit", type=int, default=0,
+                    help="只校验前 N 条 Wikidata 数据（0 = 全量；人工精选库始终全量校验）")
     ap.add_argument("--workers", type=int, default=48, help="并发数")
     args = ap.parse_args()
 
     RAW = DATA / "raw" / "wikidata.jsonl"
     CURATED = DATA / "sites-curated.json"
     sites = []
+    seen = set()
 
+    def add(host, url):
+        host = (host or "").strip().lower()
+        if host.startswith("www."):
+            host = host[4:]   # 与精选库加载一致：归一化掉 www. 前缀，跨来源才能按域名去重
+        if host and url and host not in seen:
+            seen.add(host)
+            sites.append((host, url))
+
+    # 1) 人工精选库：始终全量校验（A 级置顶数据，失效伤害最大）
+    if CURATED.exists():
+        print("源：data/sites-curated.json（人工精选，始终全量校验）", flush=True)
+        cur = json.loads(CURATED.read_text(encoding="utf-8"))["sites"]
+        for row in cur:
+            host = (row["d"].split("//")[-1].split("/")[0] or "").lower()
+            if host.startswith("www."):
+                host = host[4:]
+            add(host, row["d"])
+
+    # 2) Wikidata 原始数据：存在则追加（--limit 只限制这部分）
     if RAW.exists():
         print("源：data/raw/wikidata.jsonl", flush=True)
         tot = 0
-        with (DATA / "raw" / "wikidata.jsonl").open(encoding="utf-8") as f:
+        with RAW.open(encoding="utf-8") as f:
             for line in f:
                 if args.limit and tot >= args.limit:
                     break
@@ -113,17 +138,10 @@ def main():
                 except Exception:
                     continue
                 tot += 1
-                sites.append(((r.get("host") or "").lower(), r.get("url") or ""))
-    elif CURATED.exists():
-        print("源：data/sites-curated.json", flush=True)
-        cur = json.loads(CURATED.read_text(encoding="utf-8"))["sites"]
-        for row in cur[: args.limit or len(cur)]:
-            host = (row["d"].split("//")[-1].split("/")[0] or "").lower()
-            if host.startswith("www."):
-                host = host[4:]
-            sites.append((host, row["d"]))
-    else:
-        print("✗ 既没有 data/raw/wikidata.jsonl 也没有 data/sites-curated.json，先跑 Stage 1")
+                add((r.get("host") or "").lower(), r.get("url") or "")
+
+    if not sites:
+        print("✗ 没有任何数据源（缺 data/sites-curated.json 和 data/raw/wikidata.jsonl），先跑 Stage 0/1")
         return
 
     print(f"\n开始校验 {len(sites)} 条（并发 {args.workers}）…")

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-「直达」数据管线 · Stage 2：合并 → 拼音化 → 分级 → 分片索引
+「直达」数据管线 · Stage 3：合并 → 拼音化 → 分级 → 分片索引
 ============================================================
 输入
     data/sites-curated.json   人工精选库（node tools/extract_curated.js 导出）
     data/raw/wikidata.jsonl   Stage 1 产出
-    data/health.json          可选，Stage 3 产出（用于剔除失效/被墙/降级的链接）
+    data/health.json          可选，Stage 2 产出（用于剔除失效/被墙/降级的链接）
 
 核心设计（为什么这样我才敢说"数万条也能秒出"）
     1. 拼音在构建期算好，不在浏览器里算 —— 运行时只需字符串匹配，不做汉字转拼音
