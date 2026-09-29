@@ -7,11 +7,12 @@
     它不是网页爬虫结果，而是「结构化的官网白名单」——
     本项目区别于搜索引擎的地方：不需要爬网页、不需要过滤广告。
 
-本版相比初版的四项改进
-    1. 分页（LIMIT/OFFSET）——Wikidata 单次查询 60 秒超时，25000 条一次性拉必然失败
+本版相比初版的改进
+    1. 分页（LIMIT/OFFSET）——Wikidata 单次查询 60 秒超时，一次性拉必然失败
     2. 实体类型过滤——只取企业/组织/学校/软件/网站等，剔除寺庙、县市、纪念馆等噪声
     3. 热度门槛（wikibase:sitelinks）——只收具有一定知名度的实体，源头降噪
     4. 重试 + 退避 + 域名黑名单——429/5xx 自动重试；剔除社交媒体、建站平台等非官网链接
+    5. 坏页自动跳过——JSON 损坏或网络异常时跳过该页继续，不因一页坏数据崩溃
 
 产出
     data/raw/wikidata.jsonl  每行一条 JSON：
@@ -22,7 +23,7 @@
     python pipeline/fetch_wikidata.py                      # 默认目标 60000 条
     python pipeline/fetch_wikidata.py --max 30000          # 指定上限
     python pipeline/fetch_wikidata.py --min-links 5        # 提高热度门槛（更干净）
-    python pipeline/fetch_wikidata.py --max 0            # 不限行数（跑到拉空为止）
+    python pipeline/fetch_wikidata.py --max 0              # 不限行数（跑到拉空为止）
 """
 import json
 import re
@@ -41,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "raw" / "wikidata.jsonl"
 PAGE = 500           # 单页行数（Wikidata 504 超时，降到 500 减轻查询负担）
 MAX_TRIES = 8        # 每页最大重试次数
-SLEEP = 10            # 页间隔（礼貌抓取，避免被限流；国内网络建议 ≥5）
+SLEEP = 10           # 页间隔（给 Wikidata 服务器喘息时间，避免 504）
 
 # ---------------------------------------------------------------- 实体类型分组
 # 说明：QID 写错只会少收一些，不会出错；拿不准的类型交给最后的「通用兜底查询」
@@ -77,7 +78,7 @@ URL_RE = re.compile(r"^https?://[^\s\"'<>]+$", re.I)
 
 
 def _sparql(query, quiet=False):
-    """带重试的 SPARQL 查询。返回 bindings 列表。"""
+    """带重试的 SPARQL 查询。返回 bindings 列表；JSON 损坏返回 None；其他异常重试后抛出。"""
     delay = 6
     last = None
     for i in range(MAX_TRIES):
@@ -91,6 +92,7 @@ def _sparql(query, quiet=False):
             try:
                 body = json.loads(raw, strict=False)
             except json.JSONDecodeError as e:
+                # Wikidata 偶尔返回损坏的 JSON，不重试（重试也是同样的坏数据），返回 None 让调用方跳过
                 if not quiet:
                     print(f"    JSON 损坏，跳过该页：{e}", flush=True)
                 return None
@@ -185,7 +187,12 @@ def _paged(fetch_rows, max_rows, label):
     got, seen, offset, ordering = [], set(), 0, False
     bad_pages = 0
     while len(got) < max_rows or max_rows == 0:
-        rows = fetch_rows(PAGE, offset, ordering)
+        try:
+            rows = fetch_rows(PAGE, offset, ordering)
+        except Exception as e:
+            # 双保险：_sparql 重试耗尽后抛出的异常也在这里接住，视为坏页跳过
+            rows = None
+            print(f"    [{label}] 该页异常，跳过：{e}", flush=True)
         if rows is None:
             bad_pages += 1
             print(f"    [{label}] 跳过损坏页 offset={offset}（累计跳过 {bad_pages} 页）", flush=True)
