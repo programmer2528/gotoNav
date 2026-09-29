@@ -87,7 +87,7 @@ def _sparql(query, quiet=False):
                 url, headers={"User-Agent": UA, "Accept": "application/sparql-results+json"}
             )
             with urllib.request.urlopen(req, timeout=180) as r:
-                body = json.loads(r.read().decode("utf-8"))
+                body = json.loads(r.read().decode("utf-8"), strict=False)
             return body["results"]["bindings"]
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code}"
