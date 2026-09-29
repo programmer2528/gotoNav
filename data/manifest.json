@@ -1,0 +1,22 @@
+{
+  "updated": "2026-09-25T19:23:46+00:00",
+  "total": 276,
+  "shard": 2000,
+  "core": 1,
+  "core_kb": 9,
+  "est_total_kb": 30,
+  "tiers": {
+    "A": 276,
+    "B": 0,
+    "C": 0
+  },
+  "pinyin": true,
+  "shards": [
+    {
+      "f": "s000.json",
+      "c": 276,
+      "raw": 31206,
+      "gz": 9361
+    }
+  ]
+}

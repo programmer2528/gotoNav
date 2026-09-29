@@ -39,9 +39,9 @@ ENDPOINT = "https://query.wikidata.org/sparql"
 UA = "GoToNav/0.3 (https://zhida.cn data pipeline; contact: admin@zhida.cn)"
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "raw" / "wikidata.jsonl"
-PAGE = 5000          # 单页行数（Wikidata 建议 ≤ 10000）
-MAX_TRIES = 4        # 每页最大重试次数
-SLEEP = 3            # 页间隔（礼貌抓取，避免被限流）
+PAGE = 1000          # 单页行数（国内网络建议 ≤1000，大查询易被重置连接）
+MAX_TRIES = 6        # 每页最大重试次数
+SLEEP = 8            # 页间隔（礼貌抓取，避免被限流；国内网络建议 ≥5）
 
 # ---------------------------------------------------------------- 实体类型分组
 # 说明：QID 写错只会少收一些，不会出错；拿不准的类型交给最后的「通用兜底查询」
