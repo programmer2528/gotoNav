@@ -87,7 +87,13 @@ def _sparql(query, quiet=False):
                 url, headers={"User-Agent": UA, "Accept": "application/sparql-results+json"}
             )
             with urllib.request.urlopen(req, timeout=180) as r:
-                body = json.loads(r.read().decode("utf-8"), strict=False)
+                raw = r.read().decode("utf-8")
+            try:
+                body = json.loads(raw, strict=False)
+            except json.JSONDecodeError as e:
+                if not quiet:
+                    print(f"    JSON 损坏，跳过该页：{e}", flush=True)
+                return None
             return body["results"]["bindings"]
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code}"
@@ -175,10 +181,21 @@ def _clean(url):
 
 
 def _paged(fetch_rows, max_rows, label):
-    """通用分页循环：按 QID 去重，直到拉空或达到上限。"""
+    """通用分页循环：按 QID 去重，坏页自动跳过，直到拉空或达到上限。"""
     got, seen, offset, ordering = [], set(), 0, False
+    bad_pages = 0
     while len(got) < max_rows or max_rows == 0:
         rows = fetch_rows(PAGE, offset, ordering)
+        if rows is None:
+            bad_pages += 1
+            print(f"    [{label}] 跳过损坏页 offset={offset}（累计跳过 {bad_pages} 页）", flush=True)
+            if bad_pages >= 5:
+                print(f"    [{label}] 连续损坏页过多，停止该分组", flush=True)
+                break
+            offset += PAGE
+            time.sleep(SLEEP)
+            continue
+        bad_pages = 0
         if not rows:
             break
         for r in rows:
