@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25",
+  "updated": "2026-09-29",
   "source": "index.html",
   "count": 276,
   "sites": [
@@ -1267,7 +1267,7 @@
       "n": "LeetCode",
       "d": "https://leetcode.cn",
       "c": "dev",
-      "k": "leetcode likou 力扣 算法"
+      "k": "leetcode likou lc 力扣 算法"
     },
     {
       "n": "牛客网",
