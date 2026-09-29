@@ -3,3 +3,7 @@ __pycache__/
 # raw 是 Wikidata 原始拉取结果，体积大且可由管线重新生成，不入库
 # shards/、manifest.json、health.json 必须入库——网站运行时和 Cloudflare 部署都依赖它们
 data/raw/
+# 本地文档与本地工具，不进仓库
+操作手册-从本地到上线-修订版.md
+下一步与技术细节-对话记录.md
+push-to-github.bat
