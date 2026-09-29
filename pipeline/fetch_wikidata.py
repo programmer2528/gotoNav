@@ -5,7 +5,7 @@
 原理
     Wikidata 的 P856 属性 = "官方网站"，由全球社区人工维护。
     它不是网页爬虫结果，而是「结构化的官网白名单」——
-    这正是本项目区别于搜索引擎的地方：不需要爬网页、不需要过滤广告。
+    本项目区别于搜索引擎的地方：不需要爬网页、不需要过滤广告。
 
 本版相比初版的四项改进
     1. 分页（LIMIT/OFFSET）——Wikidata 单次查询 60 秒超时，25000 条一次性拉必然失败
@@ -39,9 +39,9 @@ ENDPOINT = "https://query.wikidata.org/sparql"
 UA = "GoToNav/0.3 (https://zhida.cn data pipeline; contact: admin@zhida.cn)"
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "raw" / "wikidata.jsonl"
-PAGE = 1000          # 单页行数（国内网络建议 ≤1000，大查询易被重置连接）
-MAX_TRIES = 6        # 每页最大重试次数
-SLEEP = 8            # 页间隔（礼貌抓取，避免被限流；国内网络建议 ≥5）
+PAGE = 500           # 单页行数（Wikidata 504 超时，降到 500 减轻查询负担）
+MAX_TRIES = 8        # 每页最大重试次数
+SLEEP = 10            # 页间隔（礼貌抓取，避免被限流；国内网络建议 ≥5）
 
 # ---------------------------------------------------------------- 实体类型分组
 # 说明：QID 写错只会少收一些，不会出错；拿不准的类型交给最后的「通用兜底查询」
@@ -176,7 +176,7 @@ def _clean(url):
 
 def _paged(fetch_rows, max_rows, label):
     """通用分页循环：按 QID 去重，直到拉空或达到上限。"""
-    got, seen, offset, ordering = [], set(), 0, True
+    got, seen, offset, ordering = [], set(), 0, False
     while len(got) < max_rows or max_rows == 0:
         rows = fetch_rows(PAGE, offset, ordering)
         if not rows:
